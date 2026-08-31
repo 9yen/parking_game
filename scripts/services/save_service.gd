@@ -1,10 +1,10 @@
 class_name ParkingSaveService
 extends RefCounted
 
-const GameStateScript = preload("res://scripts/domain/game_state.gd")
-const SAVE_PATH := "user://parking_save_v1.json"
+const GameStateScript = preload("res://scripts/domain/demo_game_state.gd")
+const SAVE_PATH := "user://parking_save_v2.json"
 
-static func save_game(state: ParkingGameState, save_path: String = SAVE_PATH) -> bool:
+static func save_game(state: DemoGameState, save_path: String = SAVE_PATH) -> bool:
 	var file := FileAccess.open(save_path, FileAccess.WRITE)
 	if file == null:
 		return false
@@ -12,7 +12,7 @@ static func save_game(state: ParkingGameState, save_path: String = SAVE_PATH) ->
 	file.close()
 	return true
 
-static func load_game(save_path: String = SAVE_PATH) -> ParkingGameState:
+static func load_game(save_path: String = SAVE_PATH) -> DemoGameState:
 	if not FileAccess.file_exists(save_path):
 		return GameStateScript.new()
 	var file := FileAccess.open(save_path, FileAccess.READ)
@@ -22,12 +22,12 @@ static func load_game(save_path: String = SAVE_PATH) -> ParkingGameState:
 	file.close()
 	return state_from_json(json_text)
 
-static func state_from_json(json_text: String) -> ParkingGameState:
+static func state_from_json(json_text: String) -> DemoGameState:
 	var state := GameStateScript.new()
 	var parser := JSON.new()
 	if parser.parse(json_text) != OK:
 		return state
 	var parsed = parser.data
 	if parsed is Dictionary:
-		state.load_from_dict(parsed)
+		state.load_dict(parsed)
 	return state

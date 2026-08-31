@@ -21,10 +21,10 @@
 
 ```powershell
 godot --headless --path . --editor --quit
-godot --headless --path . --script res://tests/test_runner.gd
+godot --headless --path . --script res://tests/demo_test_runner.gd
 ```
 
-当前测试覆盖初始状态、8 小时封顶、双方收益、满车位、重复派车、主动召回、自动返回、唯一结算编号、损坏存档和存档恢复。
+当前 Demo 测试覆盖初始状态、8 小时封顶、停车与召回、满车位、重复保护、车辆购买、等级锁、目标奖励、NPC 来访、场地分成、友好贴纸、自动返回、损坏存档、存档恢复和完成里程碑。
 
 ## 当前原则
 
@@ -32,4 +32,3 @@ godot --headless --path . --script res://tests/test_runner.gd
 - MVP 优先验证停车、收益、成长与小窗体验。
 - 使用虚构车辆和本地化文本，避免品牌与语言绑定。
 - 真实联机、Steam 市场和付费内容均不属于首个 MVP。
-
