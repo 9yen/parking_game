@@ -1,0 +1,35 @@
+# Godot 4 generated files
+.godot/
+.import/
+
+# Exported builds and credentials
+build/
+builds/
+dist/
+export_credentials.cfg
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.pfx
+*.p12
+
+# IDE and operating-system files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs, temporary files, and crash dumps
+*.log
+*.tmp
+*.temp
+*.bak
+crash_dump*.txt
+
