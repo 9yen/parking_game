@@ -28,6 +28,9 @@ Desktop.ini
 
 # Logs, temporary files, and crash dumps
 *.log
+
+# Local visual verification output
+artifacts/
 *.tmp
 *.temp
 *.bak
